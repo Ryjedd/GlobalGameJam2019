@@ -9,7 +9,7 @@ public class Wander : MonoBehaviour
 {
     public float speed = 5;
     public float directionChangeInterval = 1;
-    public float maxHeadingChange = 30;
+    public float maxHeadingChange = 180;
 
     CharacterController controller;
     float heading;
