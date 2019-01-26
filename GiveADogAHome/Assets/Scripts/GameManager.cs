@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
     private const int MAX_DOGS = 50;
     public GameObject dog; //selected in the editor
 
+    List<GameObject> treatList = new List<GameObject>();
+    public int treatNum = 5;
+    private const int MAX_TREATS = 10;
+    public GameObject treat; //selected in the editor
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +24,7 @@ public class GameManager : MonoBehaviour
 
 
         InvokeRepeating("InstantiateDogs", 0.0f, 10.0f);
+        InvokeRepeating("InstantiateTreats", 0.0f, 5.0f);
     }
 
 
@@ -47,7 +53,34 @@ public class GameManager : MonoBehaviour
             dogNum = MAX_DOGS;
         }
     }
-    
+
+    void InstantiateTreats()
+    {
+        //instantiate dogs
+        int newTreatNum = Random.Range(1, 4);
+        if (newTreatNum + treatNum <= MAX_TREATS)
+        {
+            for (int i = 0; i < treatNum; i++)
+            {
+                GameObject go = Instantiate(treat, new Vector3(Random.Range(20.0f, 65.0f), 1.0f, Random.Range(-25.0f, 32.0f)), Quaternion.identity) as GameObject;
+                go.transform.localScale = Vector3.one;
+                treatList.Add(go);
+            }
+            treatNum += newTreatNum;
+        }
+        else if (treatNum < MAX_TREATS)
+        {
+            newTreatNum = MAX_TREATS - treatNum;
+            for (int i = 0; i < treatNum; i++)
+            {
+                GameObject go = Instantiate(treat, new Vector3(Random.Range(20.0f, 65.0f), 1.0f, Random.Range(-25.0f, 32.0f)), Quaternion.identity) as GameObject;
+                go.transform.localScale = Vector3.one;
+                treatList.Add(go);
+            }
+            treatNum = MAX_TREATS;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
