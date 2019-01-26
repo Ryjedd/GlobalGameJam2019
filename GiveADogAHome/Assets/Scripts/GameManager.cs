@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
                 {
                     dog = dog3;
                 }
-                GameObject go = Instantiate(dog, new Vector3((float)i - 30.0F, 1, 25), Quaternion.identity) as GameObject;
+                GameObject go = Instantiate(dog, new Vector3((float)i - 5.0F, 1, 30), Quaternion.identity) as GameObject;
                 go.transform.localScale = Vector3.one;
                 
                 go.GetComponent<Wander>().setup(dogType);
