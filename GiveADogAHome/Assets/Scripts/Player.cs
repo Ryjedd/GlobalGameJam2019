@@ -7,12 +7,11 @@ public class Player : MonoBehaviour
 	protected string type;
 	protected new string name;
 	protected int dogCount;
-	protected int goldTreatCount;
-    protected int silverTreatCount;
-    protected int bronzeTreatCount;
+	protected int goldTreatCount = 0;
+    protected int silverTreatCount = 0;
+    protected int bronzeTreatCount = 0;
     protected float speed;
     protected GameObject character;
-    protected bool isCollide = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,32 +57,47 @@ public class Player : MonoBehaviour
         this.character = character;
     }
 
-    public bool getCollide()
-    {
-        return this.isCollide;
-    }
-
     void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.name.Contains("GoldTreat"))
+        if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 1)
         {
-            isCollide = true;
+            //col.gameObject.GetComponent<Treat>().destroyTreat();
             Destroy(col.gameObject);
             this.goldTreatCount += 1;
         }
-
-        if (col.gameObject.name.Contains("SilverTreat"))
+        if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 2)
         {
-            isCollide = true;
             Destroy(col.gameObject);
-            this.goldTreatCount += 1;
+            this.silverTreatCount += 1;
         }
-
-        if (col.gameObject.name.Contains("BronzeTreat"))
+        if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 3)
         {
-            isCollide = true;
             Destroy(col.gameObject);
-            this.goldTreatCount += 1;
+            this.bronzeTreatCount += 1;
+        }
+        if (col.gameObject.name.Contains("Dog1")){
+            if(this.goldTreatCount > 0)
+            {
+                Destroy(col.gameObject);
+                this.dogCount += 1;
+                this.goldTreatCount -= 1;
+            }
+        }
+        if (col.gameObject.name.Contains("Dog2")){
+            if (this.silverTreatCount > 0)
+            {
+                Destroy(col.gameObject);
+                this.dogCount += 1;
+                this.silverTreatCount -= 1;
+            }
+        }
+        if (col.gameObject.name.Contains("Dog3")){
+            if(this.bronzeTreatCount > 0)
+            {
+                Destroy(col.gameObject);
+                this.dogCount += 1;
+                this.bronzeTreatCount -= 1;
+            }
         }
         Debug.Log("collision name: " + col.gameObject.name);
     }
