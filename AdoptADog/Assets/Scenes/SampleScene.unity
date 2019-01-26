@@ -114,7 +114,11 @@ NavMeshSettings:
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &623399690
+=======
+--- !u!1 &106055526
+>>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 =======
 --- !u!1 &106055526
 >>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
@@ -130,11 +134,14 @@ GameObject:
   m_Component:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 623399692}
   - component: {fileID: 623399691}
   m_Layer: 0
   m_Name: GameManager
 =======
+=======
+>>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 =======
 >>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
   - component: {fileID: 106055530}
@@ -144,6 +151,9 @@ GameObject:
   m_Layer: 0
   m_Name: Cube (3)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
+=======
 >>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 =======
 >>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
@@ -154,8 +164,13 @@ GameObject:
   m_IsActive: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &623399691
 MonoBehaviour:
+=======
+--- !u!65 &106055527
+BoxCollider:
+>>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 =======
 --- !u!65 &106055527
 BoxCollider:
@@ -170,6 +185,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 623399690}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -178,6 +194,8 @@ BoxCollider:
   m_EditorClassIdentifier: 
 --- !u!4 &623399692
 =======
+=======
+>>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 =======
 >>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
   m_GameObject: {fileID: 106055526}
@@ -234,6 +252,9 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &106055530
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
+=======
 >>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 =======
 >>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
@@ -242,6 +263,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 623399690}
@@ -253,6 +275,8 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
+=======
+>>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 =======
 >>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
   m_GameObject: {fileID: 106055526}
@@ -446,6 +470,9 @@ Transform:
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
+=======
 >>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 =======
 >>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
