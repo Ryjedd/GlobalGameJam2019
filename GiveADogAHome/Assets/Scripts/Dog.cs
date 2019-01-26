@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Dog : MonoBehaviour
 {	
-	protected int type;
+	protected string type;
 	protected bool ownerTreats;
 	protected new string name;
-    public int speed;
 	
     // Start is called before the first frame update
     void Start()
@@ -21,16 +20,11 @@ public class Dog : MonoBehaviour
         
     }
 
-    public void setup(int dogType)
-    {
-        this.type = dogType;
-    }
-
-    public string getName(){
+	public string getName(){
 		return this.name;
 	}
 
-	public int getType(){
+	public string getType(){
 		return this.type;
 	}
 
