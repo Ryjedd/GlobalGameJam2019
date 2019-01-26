@@ -15,6 +15,11 @@ public class Wander : MonoBehaviour
     float heading;
     Vector3 targetRotation;
 
+    public void setup(int dogType)
+    {
+        speed = Random.Range(5.0f, 10.0f) / dogType;
+    }
+
     void Awake()
     {
         controller = GetComponent<CharacterController>();

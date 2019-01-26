@@ -38,7 +38,7 @@ public class GameManager_Kiwi : MonoBehaviour
         float mV2 = Input.GetAxis("Vertical_P2");
         player2.GetComponent<Rigidbody>().velocity = new Vector3(mH2 * speed, player2.GetComponent<Rigidbody>().velocity.y, mV2 * speed);
 
-        Debug.Log("Player 1 Score: " + player1.GetComponent<Player>().getTreatCount());
-        Debug.Log("Player 2 Score: " + player2.GetComponent<Player>().getTreatCount());
+        Debug.Log("Player 1 Score: " + player1.GetComponent<Player>().getGoldTreatCount());
+        Debug.Log("Player 2 Score: " + player2.GetComponent<Player>().getGoldTreatCount());
     }
 }
