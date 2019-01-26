@@ -59,6 +59,12 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
+
+        if (col.gameObject.tag == "Door")
+        {
+            Physics.IgnoreCollision(col.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
+        }
+
         if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 1)
         {
             //col.gameObject.GetComponent<Treat>().destroyTreat();
