@@ -61,4 +61,20 @@ public class Wander : MonoBehaviour
         heading = Random.Range(floor, ceil);
         targetRotation = new Vector3(0, heading, 0);
     }
+
+    void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("collision name: " + col.gameObject.name);
+        if (col.gameObject.tag.Contains("Wall"))
+        {
+
+            Debug.Log("WALL");
+            print("HEADING 1: " + targetRotation);
+            targetRotation.y = targetRotation.y + 180;
+            print("TP: " + targetRotation);
+            transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, targetRotation, Time.deltaTime * directionChangeInterval);
+            var forward = transform.TransformDirection(Vector3.forward);
+            controller.SimpleMove(forward * speed);
+        }
+    }
 }
