@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
 
                 GameObject go = Instantiate(treat, new Vector3(Random.Range(20.0f, 65.0f), 1.0f, Random.Range(-25.0f, 32.0f)), Quaternion.identity) as GameObject;
                 go.transform.localScale = Vector3.one;
-                go.GetComponent<Treat>().setup(treatType);
+                go.GetComponent<Treat>().setType(treatType);
                 treatList.Add(go);
             }
             treatNum += newTreatNum;
@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
 
                 GameObject go = Instantiate(treat, new Vector3(Random.Range(20.0f, 65.0f), 1.0f, Random.Range(-25.0f, 32.0f)), Quaternion.identity) as GameObject;
                 go.transform.localScale = Vector3.one;
-                go.GetComponent<Treat>().setup(treatType);
+                go.GetComponent<Treat>().setType(treatType);
                 treatList.Add(go);
             }
             treatNum = MAX_TREATS;

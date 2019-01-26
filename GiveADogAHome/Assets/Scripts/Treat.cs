@@ -18,22 +18,25 @@ public class Treat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void setup(int treatType)
+    public int getType()
     {
-        Debug.Log("TREAT TYPE:");
-        Debug.Log(treatType);
-        this.type = treatType;
+        return this.type;
     }
 
     public void destroyTreat()
     {
-        Debug.Log("DESTROY");
-        Object.Destroy(this.gameObject);
-        GameObject.Find("GameManager").GetComponent<GameManager>().treatNum -= 1;
-        Debug.Log("TREAT NUM: ");
-        Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().treatNum);
+        //Debug.Log("DESTROY");
+        //Object.Destroy(this.gameObject);
+        //GameObject.Find("GameManager").GetComponent<GameManager_Kiwi>().treatNum -= 1;
+        //Debug.Log("TREAT NUM: ");
+        //Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager_Kiwi>().treatNum);
+    }
+
+    public void setType(int type)
+    {
+        this.type = type;
     }
 }
