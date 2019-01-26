@@ -99,7 +99,6 @@ public class Player : MonoBehaviour
                 this.bronzeTreatCount -= 1;
             }
         }
-        Debug.Log("collision name: " + col.gameObject.name);
     }
 
 

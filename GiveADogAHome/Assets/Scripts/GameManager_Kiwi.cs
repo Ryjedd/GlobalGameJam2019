@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager_Kiwi : MonoBehaviour
 {
+    public float timeLeft = 30.0f;
+    public bool isGameOver = false;
+    public Image gameOverScreen;
     List<GameObject> dogList = new List<GameObject>();
     public int dogNum = 10;
     private const int MAX_DOGS = 50;
@@ -24,6 +27,7 @@ public class GameManager_Kiwi : MonoBehaviour
     public Text player2_silverScore;
     public Text player2_bronzeScore;
     public Text player2_dogScore;
+    public Text Timer;
 
     List<GameObject> treatList = new List<GameObject>();
     public int treatNum = 5;
@@ -59,7 +63,6 @@ public class GameManager_Kiwi : MonoBehaviour
             for (int i = 0; i < dogNum; i++)
             {
                 int dogType = Random.Range(1, 4);
-                Debug.Log(dogType);
                 GameObject dog;
                 if (dogType == 1)
                 {
@@ -88,7 +91,6 @@ public class GameManager_Kiwi : MonoBehaviour
             for (int i = 0; i < dogNum; i++)
             {
                 int dogType = Random.Range(1, 4);
-                Debug.Log(dogType);
                 GameObject dog;
                 if (dogType == 1)
                 {
@@ -122,7 +124,6 @@ public class GameManager_Kiwi : MonoBehaviour
             for (int i = 0; i < treatNum; i++)
             {
                 int treatType = Random.Range(1, 4);
-                Debug.Log(treatType);
                 GameObject treat;
                 if (treatType == 1)
                 {
@@ -150,7 +151,6 @@ public class GameManager_Kiwi : MonoBehaviour
             for (int i = 0; i < treatNum; i++)
             {
                 int treatType = Random.Range(1, 4);
-                Debug.Log(treatType);
                 GameObject treat;
                 if (treatType == 1)
                 {
@@ -192,18 +192,45 @@ public class GameManager_Kiwi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //getting player1 movement
-        float mH1 = Input.GetAxis("Horizontal");
-        float mV1 = Input.GetAxis("Vertical");
-        player1.GetComponent<Rigidbody>().velocity = new Vector3(mH1 * speed, player1.GetComponent<Rigidbody>().velocity.y, mV1 * speed);
+        if (!isGameOver)
+        {
+            gameOverScreen.enabled = false;
+            timeLeft -= Time.deltaTime;
+            Timer.text = "Time Remaining: " + timeLeft;
+            Debug.Log(timeLeft);
+            //getting player1 movement
+            float mH1 = Input.GetAxis("Horizontal");
+            float mV1 = Input.GetAxis("Vertical");
+            player1.GetComponent<Rigidbody>().velocity = new Vector3(mH1 * speed, player1.GetComponent<Rigidbody>().velocity.y, mV1 * speed);
 
-        //getting player2 movement
-        float mH2 = Input.GetAxis("Horizontal_P2");
-        float mV2 = Input.GetAxis("Vertical_P2");
-        player2.GetComponent<Rigidbody>().velocity = new Vector3(mH2 * speed, player2.GetComponent<Rigidbody>().velocity.y, mV2 * speed);
+            //getting player2 movement
+            float mH2 = Input.GetAxis("Horizontal_P2");
+            float mV2 = Input.GetAxis("Vertical_P2");
+            player2.GetComponent<Rigidbody>().velocity = new Vector3(mH2 * speed, player2.GetComponent<Rigidbody>().velocity.y, mV2 * speed);
 
-        displayPlayer1Text();
-        displayPlayer2Text();
+            displayPlayer1Text();
+            displayPlayer2Text();
+            if(timeLeft < 0)
+            {
+                gameOver();
+            }
+        }
 
+    }
+
+    void gameOver()
+    {
+        isGameOver = true;
+        int player1Score = player1.GetComponent<Player>().getDogCount();
+        int player2Score = player2.GetComponent<Player>().getDogCount();
+
+        gameOverScreen.enabled = true;
+        if (player1Score > player2Score)
+        {
+            Debug.Log("Player 1 wins!!");
+        }else
+        {
+            Debug.Log("Player 2 wins!!");
+        }
     }
 }
