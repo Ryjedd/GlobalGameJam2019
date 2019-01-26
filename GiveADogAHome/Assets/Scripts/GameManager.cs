@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
 
 
         InvokeRepeating("InstantiateDogs", 0.0f, 10.0f);
+        GameObject player1 = Instantiate(Resources.Load("Prefabs/Player")) as GameObject;
+        Debug.Log("player position" + player1.GetComponent<Transform>());
+        dog.GetComponent<Dog>().setName("kiwi");
+        Debug.Log("player name: " + player1.GetComponent<Player>().getName());
         InvokeRepeating("InstantiateTreats", 0.0f, 5.0f);
     }
 

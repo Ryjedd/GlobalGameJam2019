@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
 	protected int dogCount;
 	protected int treatCount;
 	protected float speed;
-	protected GameObject character;
-
+    protected GameObject character;
+    protected bool isCollide = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,4 +38,31 @@ public class Player : MonoBehaviour
 	public float getSpeed(){
 		return this.speed;
 	}
+    public void setName(string name)
+    {
+        this.name = name;
+    }
+
+    public void setCharacter(GameObject character)
+    {
+        this.character = character;
+    }
+
+    public bool getCollide()
+    {
+        return this.isCollide;
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.name == "GoldTreat")
+        {
+            isCollide = true;
+            Destroy(col.gameObject);
+            treatCount += 1;
+        }
+        Debug.Log("collision name: " + col.gameObject.name);
+    }
+
+
 }
