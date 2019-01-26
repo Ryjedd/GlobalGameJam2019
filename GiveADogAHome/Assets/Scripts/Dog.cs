@@ -23,7 +23,7 @@ public class Dog : MonoBehaviour
 
     public void setup(int dogType)
     {
-        type = dogType;
+        this.type = dogType;
     }
 
     public string getName(){
