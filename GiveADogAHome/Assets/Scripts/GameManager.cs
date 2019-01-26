@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
                     treat = treat3;
                 }
 
-                GameObject go = Instantiate(treat, new Vector3(Random.Range(20.0f, 65.0f), 1.0f, Random.Range(-25.0f, 32.0f)), Quaternion.identity) as GameObject;
+                GameObject go = Instantiate(treat, new Vector3(Random.Range(30.0f, 60.0f), 1.0f, Random.Range(-20.0f, 36.0f)), Quaternion.identity) as GameObject;
                 go.transform.localScale = Vector3.one;
                 go.GetComponent<Treat>().setType(treatType);
                 treatList.Add(go);
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
                     treat = treat3;
                 }
 
-                GameObject go = Instantiate(treat, new Vector3(Random.Range(20.0f, 65.0f), 1.0f, Random.Range(-25.0f, 32.0f)), Quaternion.identity) as GameObject;
+                GameObject go = Instantiate(treat, new Vector3(Random.Range(30.0f, 60.0f), 1.0f, Random.Range(-20.0f, 36.0f)), Quaternion.identity) as GameObject;
                 go.transform.localScale = Vector3.one;
                 go.GetComponent<Treat>().setType(treatType);
                 treatList.Add(go);
