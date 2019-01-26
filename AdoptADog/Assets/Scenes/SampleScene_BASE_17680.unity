@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,19 +112,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!1 &623399690
-=======
 --- !u!1 &106055526
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
---- !u!1 &106055526
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
---- !u!1 &106055526
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,72 +120,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - component: {fileID: 623399692}
-  - component: {fileID: 623399691}
-  m_Layer: 0
-  m_Name: GameManager
-=======
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
   - component: {fileID: 106055530}
   - component: {fileID: 106055529}
   - component: {fileID: 106055528}
   - component: {fileID: 106055527}
   m_Layer: 0
   m_Name: Cube (3)
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &623399691
-MonoBehaviour:
-=======
 --- !u!65 &106055527
 BoxCollider:
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
---- !u!65 &106055527
-BoxCollider:
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
---- !u!65 &106055527
-BoxCollider:
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_GameObject: {fileID: 623399690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 592d2dde72a6ac140b05e00335d13c62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &623399692
-=======
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
   m_GameObject: {fileID: 106055526}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -251,34 +190,11 @@ MeshFilter:
   m_GameObject: {fileID: 106055526}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &106055530
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_GameObject: {fileID: 623399690}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
   m_GameObject: {fileID: 106055526}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 4.3, y: 0.9, z: -28.3}
@@ -469,13 +385,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
-=======
->>>>>>> 2c53a80d2713dde2eda8e1ce8a613e43092ff987
 --- !u!1 &960167516
 GameObject:
   m_ObjectHideFlags: 0
