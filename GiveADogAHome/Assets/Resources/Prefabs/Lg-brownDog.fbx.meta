@@ -1,41 +1,41 @@
 fileFormatVersion: 2
-guid: 864d198a692864f40b00c9f5958fcdc4
+guid: a139b6af0be48e041bd34b02f95e1e07
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pCube3
-    100004: pCube4
-    100006: pCube5
-    100008: pCube6
-    100010: pCube7
-    100012: pCube9
-    400000: //RootNode
-    400002: pCube3
-    400004: pCube4
-    400006: pCube5
-    400008: pCube6
-    400010: pCube7
-    400012: pCube9
-    2100000: lambert1
-    2300000: pCube3
-    2300002: pCube4
-    2300004: pCube5
-    2300006: pCube6
-    2300008: pCube7
-    2300010: pCube9
-    3300000: pCube3
-    3300002: pCube4
-    3300004: pCube5
-    3300006: pCube6
-    3300008: pCube7
-    3300010: pCube9
-    4300000: pCube3
-    4300002: pCube7
-    4300004: pCube6
-    4300006: pCube9
-    4300008: pCube5
-    4300010: pCube4
+    100000: Body
+    100002: bottomJaw
+    100004: Head
+    100006: LeftEar
+    100008: //RootNode
+    100010: RightEar
+    100012: Tail
+    400000: Body
+    400002: bottomJaw
+    400004: Head
+    400006: LeftEar
+    400008: //RootNode
+    400010: RightEar
+    400012: Tail
+    2100000: brownDogMat
+    2300000: Body
+    2300002: bottomJaw
+    2300004: Head
+    2300006: LeftEar
+    2300008: RightEar
+    2300010: Tail
+    3300000: Body
+    3300002: bottomJaw
+    3300004: Head
+    3300006: LeftEar
+    3300008: RightEar
+    3300010: Tail
+    4300000: Body
+    4300002: Head
+    4300004: RightEar
+    4300006: LeftEar
+    4300008: bottomJaw
+    4300010: Tail
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -67,7 +67,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 150
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

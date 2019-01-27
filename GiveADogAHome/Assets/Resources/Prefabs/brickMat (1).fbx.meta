@@ -1,36 +1,10 @@
 fileFormatVersion: 2
-guid: 65d65eb1ba559844294c9d196c12c411
+guid: 2b4237961c76a3347ad3d30c25742114
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Body
-    100002: Head
-    100004: LeftEar
-    100006: //RootNode
-    100008: RightEar
-    100010: Tail
-    400000: Body
-    400002: Head
-    400004: LeftEar
-    400006: //RootNode
-    400008: RightEar
-    400010: Tail
-    2100000: dalmation_mat
-    2300000: Body
-    2300002: Head
-    2300004: LeftEar
-    2300006: RightEar
-    2300008: Tail
-    3300000: Body
-    3300002: Head
-    3300004: LeftEar
-    3300006: RightEar
-    3300008: Tail
-    4300000: Body
-    4300002: Head
-    4300004: RightEar
-    4300006: LeftEar
-    4300008: Tail
+    100000: //RootNode
+    400000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
