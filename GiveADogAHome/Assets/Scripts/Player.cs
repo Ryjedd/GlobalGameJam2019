@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     protected float speed;
     protected GameObject character;
     protected Animator animator;
+	protected bool punch;
+	protected bool playerCollision = false;
 
 
 
@@ -30,6 +32,12 @@ public class Player : MonoBehaviour
 
     public string getType(){
 		return this.type;
+	}
+	public bool getPunch(){
+		return this.punch;
+	}
+	public bool getPlayerCollision(){
+		return this.playerCollision;
 	}
 	public string getName(){
 		return this.name;
@@ -56,6 +64,12 @@ public class Player : MonoBehaviour
     {
         this.name = name;
     }
+	public void setPunch(bool punch){
+		this.punch = punch;
+	}
+	public void setPlayerCollision(bool playerCollision){
+		this.playerCollision = playerCollision;
+	}
 
     public void updateWalk(float velocity)
     {
@@ -95,7 +109,6 @@ public class Player : MonoBehaviour
             this.bronzeTreatCount += 1;
         }
 
-        Debug.Log("TAG: " + col.gameObject.tag);
         if (col.gameObject.tag == "dog1"){
             if(this.goldTreatCount > 0)
             {
@@ -123,6 +136,12 @@ public class Player : MonoBehaviour
                 this.bronzeTreatCount -= 1;
             }
         }
+
+		if(col.gameObject.name.Contains("Player")){
+			this.playerCollision = true;
+
+		}
+
     }
 
 

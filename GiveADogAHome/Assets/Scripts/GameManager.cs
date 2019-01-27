@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     public float timeLeft = 120.0f;
     public bool isGameOver = false;
     public Image gameOverScreen;
-
+	public int min = 0;
+	public int sec = 0;
     List<GameObject> dogList = new List<GameObject>();
     public int dogNum = 0;
     private const int MAX_DOGS = 20;
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject player1;
     private GameObject player2;
-    private float speed = 10.0f;
+    private float speed = 15.0f;
 
     public Text player1_goldScore;
     public Text player1_silverScore;
@@ -274,8 +275,10 @@ public class GameManager : MonoBehaviour
         {
             gameOverScreen.enabled = false;
             timeLeft -= Time.deltaTime;
-            Timer.text = "Time Remaining: " + timeLeft;
-            //Debug.Log(timeLeft);
+			min = Mathf.FloorToInt(timeLeft / 60);
+			sec = Mathf.FloorToInt(timeLeft % 60);
+			Timer.text = min.ToString("00") + ":" + sec.ToString("00");
+			//Timer.text = "Time Remaining: " + Mathf.Round(timeLeft);
             //getting player1 movement
             float mH1 = Input.GetAxis("Horizontal");
             float mV1 = Input.GetAxis("Vertical");
@@ -297,7 +300,13 @@ public class GameManager : MonoBehaviour
             player2.GetComponent<Rigidbody>().velocity = new Vector3(mH2 * speed, player2.GetComponent<Rigidbody>().velocity.y, mV2 * speed);
             player2.GetComponent<Player>().updateWalk(player2.GetComponent<Rigidbody>().velocity.magnitude);
 
-            displayPlayer1Text();
+			if(!(player2.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.LeftShift) && (player2.GetComponent<Player>().getPlayerCollision())){
+				Punch(5.0f, player1.transform.forward, player2);
+			}
+			if(!(player1.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.RightShift) && (player2.GetComponent<Player>().getPlayerCollision())){
+				Punch(5.0f, player2.transform.forward, player2);
+			}
+			displayPlayer1Text();
             displayPlayer2Text();
             if (timeLeft < 0)
             {
@@ -321,5 +330,16 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Player 2 wins!!");
             }
         }
+
+		void Punch(float distance, Vector3 direction, GameObject player){
+			player.GetComponent<Player>().setPunch(true);
+			float timer = 0;
+			Vector3 orgPos = player.GetComponent<Transform>().position;
+			direction.Normalize();
+			Vector3 newDistance = distance * direction;
+			player.GetComponent<Transform>().position = orgPos + newDistance;
+			player.GetComponent<Player>().setPunch(false);
+			player.GetComponent<Player>().setPlayerCollision(false);
+		}
     }
 }
