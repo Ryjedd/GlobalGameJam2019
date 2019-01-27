@@ -25,11 +25,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+
     }
 
-	public string getType(){
+    public string getType(){
 		return this.type;
 	}
 	public string getName(){
