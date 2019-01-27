@@ -65,7 +65,8 @@ public class Player : MonoBehaviour
         this.name = name;
     }
 	public void setPunch(bool punch){
-		this.punch = punch;
+        animator.SetTrigger("Punch");
+        this.punch = punch;
 	}
 	public void setPlayerCollision(bool playerCollision){
 		this.playerCollision = playerCollision;
@@ -95,18 +96,21 @@ public class Player : MonoBehaviour
             col.gameObject.GetComponent<Treat>().destroyTreat();
             //Destroy(col.gameObject);
             this.goldTreatCount += 1;
+            animator.SetTrigger("PickUp");
         }
         if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 2)
         {
             col.gameObject.GetComponent<Treat>().destroyTreat();
             //Destroy(col.gameObject);
             this.silverTreatCount += 1;
+            animator.SetTrigger("PickUp");
         }
         if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 3)
         {
             col.gameObject.GetComponent<Treat>().destroyTreat();
             //Destroy(col.gameObject);
             this.bronzeTreatCount += 1;
+            animator.SetTrigger("PickUp");
         }
 
         if (col.gameObject.tag == "dog1"){
@@ -116,6 +120,7 @@ public class Player : MonoBehaviour
                 //Destroy(col.gameObject);
                 this.dogCount += 1;
                 this.goldTreatCount -= 1;
+                animator.SetTrigger("PickUp");
             }
         }
         if (col.gameObject.tag == "dog2"){
@@ -125,6 +130,7 @@ public class Player : MonoBehaviour
                 //Destroy(col.gameObject);
                 this.dogCount += 1;
                 this.silverTreatCount -= 1;
+                animator.SetTrigger("PickUp");
             }
         }
         if (col.gameObject.tag == "dog3"){
@@ -134,6 +140,7 @@ public class Player : MonoBehaviour
                 //Destroy(col.gameObject);
                 this.dogCount += 1;
                 this.bronzeTreatCount -= 1;
+                animator.SetTrigger("PickUp");
             }
         }
 

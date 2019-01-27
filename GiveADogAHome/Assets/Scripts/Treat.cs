@@ -29,8 +29,8 @@ public class Treat : MonoBehaviour
     {
         
         GameObject.Find("GameManager").GetComponent<GameManager>().treatNum -= 1;
-        Debug.Log("TREAT NUM: ");
-        Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().treatNum);
+        //Debug.Log("TREAT NUM: ");
+        //Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().treatNum);
         Object.Destroy(this.gameObject);
     }
 

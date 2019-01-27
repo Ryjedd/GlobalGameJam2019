@@ -46,8 +46,8 @@ public class Dog : MonoBehaviour
     {
         Object.Destroy(this.gameObject);
         GameObject.Find("GameManager").GetComponent<GameManager>().dogNum -= 1;
-        Debug.Log("DOG NUM: ");
-        Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().dogNum);
+        //Debug.Log("DOG NUM: ");
+        //Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().dogNum);
     }
 
 }

@@ -8,8 +8,11 @@ using System.Collections;
 public class Wander : MonoBehaviour
 {
     public float speed = 5;
-    public float directionChangeInterval = 1;
-    public float maxHeadingChange = 180;
+    public float directionChangeInterval = .5f;
+    public float maxHeadingChange = 360;
+    private bool turnAround = false;
+    private float mainDirection = 1;
+    private float turnTowards = 0;
 
     CharacterController controller;
     float heading;
@@ -56,25 +59,48 @@ public class Wander : MonoBehaviour
     /// </summary>
     void NewHeadingRoutine()
     {
-        var floor = Mathf.Clamp(heading - maxHeadingChange, 0, 360);
-        var ceil = Mathf.Clamp(heading + maxHeadingChange, 0, 360);
-        heading = Random.Range(floor, ceil);
-        targetRotation = new Vector3(0, heading, 0);
+           // Debug.Log("NEW DIRECTION");
+            var floor = Mathf.Clamp(0, 0, 360);
+            var ceil = Mathf.Clamp(360, 0, 360);
+        // Debug.Log("FLOOR: " + floor);
+        // Debug.Log("CEIL: " + ceil);
+        if (mainDirection == 1)
+        {
+            Debug.Log("NOT HOME");
+            heading = Random.Range(0, 360);
+        }
+        else
+        {
+                heading = turnTowards;
+                Debug.Log("HOME1");
+        }
+           // Debug.Log("HEADING: " + heading);
+            targetRotation = new Vector3(0, heading, 0);
+    }
+    
+    public void TurnAround()
+    {
+        Debug.Log("PLEASE TURN AROUND");
+        
+        
+        if (mainDirection == 1)
+        {
+            int turnDirection = Random.Range(1, 3);
+            if (turnDirection == 1)
+            {
+                turnTowards = 360;
+            }
+            else
+            {
+                turnTowards = 0;
+            }
+            mainDirection = -1;
+        }
+        
     }
 
-    void OnTriggerEnter(Collider col)
+    public void TurnAround2()
     {
-        Debug.Log("collision name: " + col.gameObject.name);
-        if (col.gameObject.tag.Contains("Wall"))
-        {
-
-            Debug.Log("WALL");
-            print("HEADING 1: " + targetRotation);
-            targetRotation.y = targetRotation.y + 180;
-            print("TP: " + targetRotation);
-            transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, targetRotation, Time.deltaTime * directionChangeInterval);
-            var forward = transform.TransformDirection(Vector3.forward);
-            controller.SimpleMove(forward * speed);
-        }
+        mainDirection = 1;
     }
 }
