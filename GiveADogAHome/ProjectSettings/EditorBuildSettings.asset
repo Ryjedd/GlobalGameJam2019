@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 5806aea5a3018f24780e9f86ffef5806
-  - enabled: 1
-    path: Assets/Scenes/DogBehaviourScene.unity
-    guid: 57804843a6bc7bf4ea23418abafaa441
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Controls.unity
     guid: 8302953973dc07940ba1168ae11976e0
+  - enabled: 1
+    path: Assets/Scenes/DogBehaviourScene.unity
+    guid: f1ab0163b9a430b449bf35333ac939c9
   m_configObjects: {}
