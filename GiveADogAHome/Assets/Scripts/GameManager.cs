@@ -257,17 +257,17 @@ public class GameManager : MonoBehaviour
 
     void displayPlayer1Text()
     {
-        player1_goldScore.text = "GoldTreat: " + player1.GetComponent<Player>().getGoldTreatCount().ToString();
-        player1_silverScore.text = "silverTreat: " + player1.GetComponent<Player>().getSilverTreatCount().ToString();
-        player1_bronzeScore.text = "bronzeTreat: " + player1.GetComponent<Player>().getBronzeTreatCount().ToString();
+        player1_goldScore.text = "Bone Treat: " + player1.GetComponent<Player>().getGoldTreatCount().ToString();
+        player1_silverScore.text = "Hotdog Treat: " + player1.GetComponent<Player>().getSilverTreatCount().ToString();
+        player1_bronzeScore.text = "Ham Treat: " + player1.GetComponent<Player>().getBronzeTreatCount().ToString();
         player1_dogScore.text = "Dog Score: " + player1.GetComponent<Player>().getDogCount().ToString();
     }
 
     void displayPlayer2Text()
     {
-        player2_goldScore.text = "GoldTreat: " + player2.GetComponent<Player>().getGoldTreatCount().ToString();
-        player2_silverScore.text = "silverTreat: " + player2.GetComponent<Player>().getSilverTreatCount().ToString();
-        player2_bronzeScore.text = "bronzeTreat: " + player2.GetComponent<Player>().getBronzeTreatCount().ToString();
+        player2_goldScore.text = "Bone Treat: " + player2.GetComponent<Player>().getGoldTreatCount().ToString();
+        player2_silverScore.text = "Hotdog Treat: " + player2.GetComponent<Player>().getSilverTreatCount().ToString();
+        player2_bronzeScore.text = "Ham Treat: " + player2.GetComponent<Player>().getBronzeTreatCount().ToString();
         player2_dogScore.text = "Dog Score: " + player2.GetComponent<Player>().getDogCount().ToString();
     }
 
