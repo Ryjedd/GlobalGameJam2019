@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < newDogNum; i++)
             {
                 int dogType = Random.Range(1, 4);
-               // Debug.Log(dogType);
+                Debug.Log(dogType);
                 GameObject dog;
                 int dogModelNum = Random.Range(1, 4);
                 if (dogType == 1)
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < newDogNum; i++)
             {
                 int dogType = Random.Range(1, 4);
-                //Debug.Log(dogType);
+                Debug.Log(dogType);
                 GameObject dog;
                 int dogModelNum = Random.Range(1, 4);
                 if (dogType == 1)
@@ -199,8 +199,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < treatNum; i++)
             {
                 int treatType = Random.Range(1, 4);
-                //Debug.Log(treatType);
-                Debug.Log("NEW TREAT NUM: " + treatNum);
+                Debug.Log(treatType);
                 GameObject treat;
                 if (treatType == 1)
                 {
@@ -225,11 +224,10 @@ public class GameManager : MonoBehaviour
         else if (treatNum < MAX_TREATS)
         {
             newTreatNum = MAX_TREATS - treatNum;
-            Debug.Log("NEW TREAT NUM: " + treatNum);
             for (int i = 0; i < treatNum; i++)
             {
                 int treatType = Random.Range(1, 4);
-               // Debug.Log(treatType);
+                Debug.Log(treatType);
                 GameObject treat;
                 if (treatType == 1)
                 {
@@ -276,12 +274,15 @@ public class GameManager : MonoBehaviour
         {
             gameOverScreen.enabled = false;
             timeLeft -= Time.deltaTime;
-            Timer.text = "Time Remaining: " + Mathf.Round(timeLeft);
+            Timer.text = "Time Remaining: " + timeLeft;
             //Debug.Log(timeLeft);
             //getting player1 movement
             float mH1 = Input.GetAxis("Horizontal");
             float mV1 = Input.GetAxis("Vertical");
+
+            //Debug.Log(player1.GetComponent<Rigidbody>().velocity);
             player1.GetComponent<Rigidbody>().velocity = new Vector3(mH1 * speed, player1.GetComponent<Rigidbody>().velocity.y, mV1 * speed);
+            player1.GetComponent<Player>().updateWalk(player1.GetComponent<Rigidbody>().velocity.magnitude);
 
             //getting player2 movement
             float mH2 = Input.GetAxis("Horizontal_P2");
