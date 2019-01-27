@@ -197,7 +197,7 @@ public class GameManager_Kiwi : MonoBehaviour
             gameOverScreen.enabled = false;
             timeLeft -= Time.deltaTime;
             Timer.text = "Time Remaining: " + timeLeft;
-            Debug.Log(timeLeft);
+            //Debug.Log(timeLeft);
             //getting player1 movement
             float mH1 = Input.GetAxis("Horizontal");
             float mV1 = Input.GetAxis("Vertical");

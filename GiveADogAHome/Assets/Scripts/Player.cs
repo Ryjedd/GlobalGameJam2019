@@ -12,15 +12,20 @@ public class Player : MonoBehaviour
     protected int bronzeTreatCount = 0;
     protected float speed;
     protected GameObject character;
+    protected Animator animator;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         
     }
 
@@ -45,11 +50,18 @@ public class Player : MonoBehaviour
         return this.bronzeTreatCount;
     }
     public float getSpeed(){
-		return this.speed;
+        
+        return this.speed;
 	}
     public void setName(string name)
     {
         this.name = name;
+    }
+
+    public void updateWalk(float velocity)
+    {
+        Debug.Log(velocity);
+        animator.SetFloat("Speed", velocity);
     }
 
     public void setCharacter(GameObject character)
