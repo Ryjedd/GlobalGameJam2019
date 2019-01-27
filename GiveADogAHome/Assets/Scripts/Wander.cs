@@ -66,13 +66,13 @@ public class Wander : MonoBehaviour
         // Debug.Log("CEIL: " + ceil);
         if (mainDirection == 1)
         {
-            Debug.Log("NOT HOME");
+            //Debug.Log("NOT HOME");
             heading = Random.Range(0, 360);
         }
         else
         {
                 heading = turnTowards;
-                Debug.Log("HOME1");
+                //Debug.Log("HOME1");
         }
            // Debug.Log("HEADING: " + heading);
             targetRotation = new Vector3(0, heading, 0);
@@ -80,7 +80,7 @@ public class Wander : MonoBehaviour
     
     public void TurnAround()
     {
-        Debug.Log("PLEASE TURN AROUND");
+        //Debug.Log("PLEASE TURN AROUND");
         
         
         if (mainDirection == 1)

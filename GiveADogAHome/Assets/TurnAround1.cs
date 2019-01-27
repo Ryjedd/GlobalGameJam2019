@@ -20,7 +20,7 @@ public class TurnAround1 : MonoBehaviour
     {
         if (col.gameObject.tag == "dog1" || col.gameObject.tag == "dog2" || col.gameObject.tag == "dog3")
         {
-            Debug.Log("TURN AROUND2");
+            //Debug.Log("TURN AROUND2");
             col.gameObject.GetComponent<Wander>().TurnAround2();
         }
     }

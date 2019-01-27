@@ -254,7 +254,7 @@ public class GameManager : MonoBehaviour
                 treatNum += 1;
             }
         }
-        print("TREAT NUM: " + treatNum);
+       // print("TREAT NUM: " + treatNum);
     }
 
     void displayPlayer1Text()
@@ -294,8 +294,11 @@ public class GameManager : MonoBehaviour
                 player1.transform.forward = move1;
 
             //Debug.Log(player1.GetComponent<Rigidbody>().velocity);
-            player1.GetComponent<Rigidbody>().velocity = new Vector3(mH1 * speed, player1.GetComponent<Rigidbody>().velocity.y, mV1 * speed);
-            player1.GetComponent<Player>().updateWalk(player1.GetComponent<Rigidbody>().velocity.magnitude);
+            if (!player1.GetComponent<Player>().getIsStopped())
+            {
+                player1.GetComponent<Rigidbody>().velocity = new Vector3(mH1 * speed, player1.GetComponent<Rigidbody>().velocity.y, mV1 * speed);
+                player1.GetComponent<Player>().updateWalk(player1.GetComponent<Rigidbody>().velocity.magnitude);
+            }
             //Debug.Log("MAGNITUDE: " + player1.GetComponent<Rigidbody>().velocity.magnitude);
 
             //getting player2 movement
@@ -304,15 +307,22 @@ public class GameManager : MonoBehaviour
             Vector3 move2 = new Vector3(mH2, 0, mV2);
             if (move2 != Vector3.zero)
                 player2.transform.forward = move2;
-            player2.GetComponent<Rigidbody>().velocity = new Vector3(mH2 * speed, player2.GetComponent<Rigidbody>().velocity.y, mV2 * speed);
-            player2.GetComponent<Player>().updateWalk(player2.GetComponent<Rigidbody>().velocity.magnitude);
+
+            if (!player2.GetComponent<Player>().getIsStopped())
+            {
+                player2.GetComponent<Rigidbody>().velocity = new Vector3(mH2 * speed, player2.GetComponent<Rigidbody>().velocity.y, mV2 * speed);
+                player2.GetComponent<Player>().updateWalk(player2.GetComponent<Rigidbody>().velocity.magnitude);
+            }
 
 			if(!(player2.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.LeftShift) && (player2.GetComponent<Player>().getPlayerCollision())){
 				Punch(5.0f, player1.transform.forward, player2);
-			}
+                player1.GetComponent<Player>().animatePunch();
+            }
 			if(!(player1.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.RightShift) && (player1.GetComponent<Player>().getPlayerCollision())){
 				Punch(5.0f, player2.transform.forward, player1);
-			}
+                player2.GetComponent<Player>().animatePunch();
+
+            }
 			displayPlayer1Text();
             displayPlayer2Text();
             if (timeLeft < 0)

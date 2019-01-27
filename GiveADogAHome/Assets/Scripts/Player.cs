@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	protected string type;
-	protected new string name;
-	protected int dogCount;
-	protected int goldTreatCount = 0;
+    protected string type;
+    protected new string name;
+    protected int dogCount;
+    protected int goldTreatCount = 0;
     protected int silverTreatCount = 0;
     protected int bronzeTreatCount = 0;
     protected float speed;
     protected GameObject character;
     protected Animator animator;
-	protected bool punch;
-	protected bool playerCollision = false;
+    protected bool punch;
+    protected bool playerCollision = false;
+    protected bool stopMoving = false;
 
 
 
@@ -30,24 +31,24 @@ public class Player : MonoBehaviour
 
     }
 
-    public string getType(){
-		return this.type;
-	}
-	public bool getPunch(){
-		return this.punch;
-	}
-	public bool getPlayerCollision(){
-		return this.playerCollision;
-	}
-	public string getName(){
-		return this.name;
-	}
-	public int getDogCount(){
-		return this.dogCount;
-	}
-	public int getGoldTreatCount(){
-		return this.goldTreatCount;
-	}
+    public string getType() {
+        return this.type;
+    }
+    public bool getPunch() {
+        return this.punch;
+    }
+    public bool getPlayerCollision() {
+        return this.playerCollision;
+    }
+    public string getName() {
+        return this.name;
+    }
+    public int getDogCount() {
+        return this.dogCount;
+    }
+    public int getGoldTreatCount() {
+        return this.goldTreatCount;
+    }
     public int getSilverTreatCount()
     {
         return this.silverTreatCount;
@@ -56,18 +57,22 @@ public class Player : MonoBehaviour
     {
         return this.bronzeTreatCount;
     }
-    public float getSpeed(){
+    public float getSpeed() {
 
         return this.speed;
-	}
+    }
     public void setName(string name)
     {
         this.name = name;
     }
-	public void setPunch(bool punch){
-        animator.SetTrigger("Punch");
+    public void setPunch(bool punch) {
         this.punch = punch;
-	}
+    }
+
+    public void animatePunch() {
+        animator.SetTrigger("Punch");
+    }
+
 	public void setPlayerCollision(bool playerCollision){
 		this.playerCollision = playerCollision;
 	}
@@ -81,6 +86,18 @@ public class Player : MonoBehaviour
     public void setCharacter(GameObject character)
     {
         this.character = character;
+    }
+
+    private void stopCharacter()
+    {
+        Debug.Log("Stop character");
+        this.stopMoving = true;
+        StartCoroutine(Wait());
+    }
+
+    public bool getIsStopped()
+    {
+        return this.stopMoving;
     }
 
     void OnCollisionEnter(Collision col)
@@ -97,6 +114,7 @@ public class Player : MonoBehaviour
             //Destroy(col.gameObject);
             this.goldTreatCount += 1;
             animator.SetTrigger("PickUp");
+            stopCharacter();
         }
         if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 2)
         {
@@ -104,6 +122,7 @@ public class Player : MonoBehaviour
             //Destroy(col.gameObject);
             this.silverTreatCount += 1;
             animator.SetTrigger("PickUp");
+            stopCharacter();
         }
         if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 3)
         {
@@ -111,6 +130,7 @@ public class Player : MonoBehaviour
             //Destroy(col.gameObject);
             this.bronzeTreatCount += 1;
             animator.SetTrigger("PickUp");
+            stopCharacter();
         }
 
         if (col.gameObject.tag == "dog1"){
@@ -121,6 +141,7 @@ public class Player : MonoBehaviour
                 this.dogCount += 1;
                 this.goldTreatCount -= 1;
                 animator.SetTrigger("PickUp");
+                stopCharacter();
             }
         }
         if (col.gameObject.tag == "dog2"){
@@ -131,6 +152,7 @@ public class Player : MonoBehaviour
                 this.dogCount += 1;
                 this.silverTreatCount -= 1;
                 animator.SetTrigger("PickUp");
+                stopCharacter();
             }
         }
         if (col.gameObject.tag == "dog3"){
@@ -141,6 +163,7 @@ public class Player : MonoBehaviour
                 this.dogCount += 1;
                 this.bronzeTreatCount -= 1;
                 animator.SetTrigger("PickUp");
+                stopCharacter();
             }
         }
 
@@ -148,6 +171,16 @@ public class Player : MonoBehaviour
 			this.playerCollision = true;
 
 		}
+
+    }
+
+    IEnumerator Wait()
+    {
+        
+        print("Start to wait");
+        yield return new WaitForSeconds(3); // wait for 5 sec
+        print("Wait complete");
+        this.stopMoving = false;
 
     }
 
