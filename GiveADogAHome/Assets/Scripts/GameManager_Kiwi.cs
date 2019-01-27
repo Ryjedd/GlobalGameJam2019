@@ -46,7 +46,7 @@ public class GameManager_Kiwi : MonoBehaviour
         player1.transform.localScale = Vector3.one;
 
         //Setting Player 2
-        player2 = Instantiate(Resources.Load("Prefabs/Player"), new Vector3(0 - 30.0F, 1, 25), Quaternion.identity) as GameObject;
+        player2 = Instantiate(Resources.Load("Prefabs/Player2"), new Vector3(0 - 30.0F, 1, 25), Quaternion.identity) as GameObject;
         player2.GetComponent<Player>().setCharacter(player2);
         player2.transform.localScale = Vector3.one;
 

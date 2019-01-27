@@ -27,10 +27,11 @@ public class Treat : MonoBehaviour
 
     public void destroyTreat()
     {
-        Object.Destroy(this.gameObject);
+        
         GameObject.Find("GameManager").GetComponent<GameManager>().treatNum -= 1;
         Debug.Log("TREAT NUM: ");
         Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().treatNum);
+        Object.Destroy(this.gameObject);
     }
 
     public void setType(int type)

@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         return this.bronzeTreatCount;
     }
     public float getSpeed(){
-        
+
         return this.speed;
 	}
     public void setName(string name)
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        Debug.Log("COLLISION");
+        //Debug.Log("COLLISION");
         if (col.gameObject.tag == "Door")
         {
             Physics.IgnoreCollision(col.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
