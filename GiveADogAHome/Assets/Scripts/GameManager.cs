@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < newDogNum; i++)
             {
                 int dogType = Random.Range(1, 4);
-                Debug.Log(dogType);
+                //Debug.Log(dogType);
                 GameObject dog;
                 int dogModelNum = Random.Range(1, 4);
                 if (dogType == 1)
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < newDogNum; i++)
             {
                 int dogType = Random.Range(1, 4);
-                Debug.Log(dogType);
+                //Debug.Log(dogType);
                 GameObject dog;
                 int dogModelNum = Random.Range(1, 4);
                 if (dogType == 1)
@@ -199,7 +199,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < newTreatNum; i++)
             {
                 int treatType = Random.Range(1, 4);
-                Debug.Log(treatType);
+                //Debug.Log(treatType);
                 GameObject treat;
                 if (treatType == 1)
                 {
@@ -219,7 +219,7 @@ public class GameManager : MonoBehaviour
                 go.GetComponent<Treat>().setType(treatType);
                 treatList.Add(go);
                 treatNum += 1;
-                Debug.Log("ADD 1");
+                ///Debug.Log("ADD 1");
             }
         }
         else
@@ -228,7 +228,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < newTreatNum; i++)
             {
                 int treatType = Random.Range(1, 4);
-                Debug.Log(treatType);
+                //Debug.Log(treatType);
                 GameObject treat;
                 if (treatType == 1)
                 {
@@ -247,7 +247,7 @@ public class GameManager : MonoBehaviour
                 go.transform.localScale = Vector3.one;
                 go.GetComponent<Treat>().setType(treatType);
                 treatList.Add(go);
-                Debug.Log("ADD 2");
+               // Debug.Log("ADD 2");
                 treatNum += 1;
             }
         }
