@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject player1;
     private GameObject player2;
-    private float speed = 15.0f;
+    public float speed = 20.0f;
 
     public Text player1_goldScore;
     public Text player1_silverScore;
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         player1.transform.localScale = Vector3.one;
 
         //Setting Player 2
-        player2 = Instantiate(Resources.Load("Prefabs/Player2"), new Vector3(0 - 30.0F, 1, 25), Quaternion.identity) as GameObject;
+        player2 = Instantiate(Resources.Load("Prefabs/Player2"), new Vector3(0 - 20.0F, 1, 25), Quaternion.identity) as GameObject;
         player2.GetComponent<Player>().setCharacter(player2);
         player2.transform.localScale = Vector3.one;
 
@@ -314,11 +314,11 @@ public class GameManager : MonoBehaviour
                 player2.GetComponent<Player>().updateWalk(player2.GetComponent<Rigidbody>().velocity.magnitude);
             }
 
-			if(!(player2.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.LeftShift) && (player2.GetComponent<Player>().getPlayerCollision())){
+			if(!(player2.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.Alpha1) && (player2.GetComponent<Player>().getPlayerCollision())){
 				Punch(5.0f, player1.transform.forward, player2);
                 player1.GetComponent<Player>().animatePunch();
             }
-			if(!(player1.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.RightShift) && (player1.GetComponent<Player>().getPlayerCollision())){
+			if(!(player1.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.Keypad2) && (player1.GetComponent<Player>().getPlayerCollision())){
 				Punch(5.0f, player2.transform.forward, player1);
                 player2.GetComponent<Player>().animatePunch();
 
