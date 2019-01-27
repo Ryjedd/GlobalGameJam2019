@@ -274,7 +274,7 @@ public class GameManager : MonoBehaviour
         {
             gameOverScreen.enabled = false;
             timeLeft -= Time.deltaTime;
-            Timer.text = "Time Remaining: " + timeLeft;
+            Timer.text = "Time Remaining: " + Mathf.Round(timeLeft);
             Debug.Log(timeLeft);
             //getting player1 movement
             float mH1 = Input.GetAxis("Horizontal");
