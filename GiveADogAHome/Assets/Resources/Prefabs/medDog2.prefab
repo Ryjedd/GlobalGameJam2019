@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 6886317616552057150}
   m_Layer: 0
   m_Name: medDog2
-  m_TagString: Untagged
+  m_TagString: dog2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -41,5 +41,13 @@ public class Dog : MonoBehaviour
 	public void setName(string name){
 		this.name = name;
 	}
-		
+
+    public void destroyDog()
+    {
+        Object.Destroy(this.gameObject);
+        GameObject.Find("GameManager").GetComponent<GameManager>().dogNum -= 1;
+        Debug.Log("DOG NUM: ");
+        Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().dogNum);
+    }
+
 }

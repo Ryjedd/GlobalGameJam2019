@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public float timeLeft = 30.0f;
+    public float timeLeft = 120.0f;
     public bool isGameOver = false;
     public Image gameOverScreen;
 
     List<GameObject> dogList = new List<GameObject>();
-    public int dogNum = 10;
-    private const int MAX_DOGS = 50;
+    public int dogNum = 0;
+    private const int MAX_DOGS = 20;
     public GameObject smallDog1; //selected in the editor
     public GameObject smallDog2; //selected in the editor
     public GameObject smallDog3; //selected in the editor
@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
     public GameObject largeDog3; //selected in the editor
 
     List<GameObject> treatList = new List<GameObject>();
-    public int treatNum = 5;
-    private const int MAX_TREATS = 10;
+    public int treatNum = 0;
+    private const int MAX_TREATS = 5;
     public GameObject treat1; //selected in the editor
     public GameObject treat2; //selected in the editor
     public GameObject treat3; //selected in the editor
@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
                 dogList.Add(go);
             }
             dogNum += newDogNum;
-        } else if(dogNum < MAX_DOGS)
+        } else
         {
             newDogNum = MAX_DOGS - dogNum;
             for (int i = 0; i < newDogNum; i++)
@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviour
             }
             treatNum += newTreatNum;
         }
-        else if (treatNum < MAX_TREATS)
+        else
         {
             newTreatNum = MAX_TREATS - treatNum;
             for (int i = 0; i < treatNum; i++)
@@ -283,6 +283,7 @@ public class GameManager : MonoBehaviour
             //Debug.Log(player1.GetComponent<Rigidbody>().velocity);
             player1.GetComponent<Rigidbody>().velocity = new Vector3(mH1 * speed, player1.GetComponent<Rigidbody>().velocity.y, mV1 * speed);
             player1.GetComponent<Player>().updateWalk(player1.GetComponent<Rigidbody>().velocity.magnitude);
+            //Debug.Log("MAGNITUDE: " + player1.GetComponent<Rigidbody>().velocity.magnitude);
 
             //getting player2 movement
             float mH2 = Input.GetAxis("Horizontal_P2");

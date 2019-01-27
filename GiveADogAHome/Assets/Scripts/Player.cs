@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
 
     public void updateWalk(float velocity)
     {
-        Debug.Log(velocity);
+        //Debug.Log(velocity);
         animator.SetFloat("Speed", velocity);
     }
 
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-
+        Debug.Log("COLLISION");
         if (col.gameObject.tag == "Door")
         {
             Physics.IgnoreCollision(col.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
@@ -79,40 +79,47 @@ public class Player : MonoBehaviour
 
         if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 1)
         {
-            //col.gameObject.GetComponent<Treat>().destroyTreat();
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<Treat>().destroyTreat();
+            //Destroy(col.gameObject);
             this.goldTreatCount += 1;
         }
         if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 2)
         {
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<Treat>().destroyTreat();
+            //Destroy(col.gameObject);
             this.silverTreatCount += 1;
         }
         if (col.gameObject.name.Contains("Treat") && col.gameObject.GetComponent<Treat>().getType() == 3)
         {
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<Treat>().destroyTreat();
+            //Destroy(col.gameObject);
             this.bronzeTreatCount += 1;
         }
-        if (col.gameObject.name.Contains("Dog1")){
+
+        Debug.Log("TAG: " + col.gameObject.tag);
+        if (col.gameObject.tag == "dog1"){
             if(this.goldTreatCount > 0)
             {
-                Destroy(col.gameObject);
+                col.gameObject.GetComponent<Dog>().destroyDog();
+                //Destroy(col.gameObject);
                 this.dogCount += 1;
                 this.goldTreatCount -= 1;
             }
         }
-        if (col.gameObject.name.Contains("Dog2")){
+        if (col.gameObject.tag == "dog2"){
             if (this.silverTreatCount > 0)
             {
-                Destroy(col.gameObject);
+                col.gameObject.GetComponent<Dog>().destroyDog();
+                //Destroy(col.gameObject);
                 this.dogCount += 1;
                 this.silverTreatCount -= 1;
             }
         }
-        if (col.gameObject.name.Contains("Dog3")){
+        if (col.gameObject.tag == "dog3"){
             if(this.bronzeTreatCount > 0)
             {
-                Destroy(col.gameObject);
+                col.gameObject.GetComponent<Dog>().destroyDog();
+                //Destroy(col.gameObject);
                 this.dogCount += 1;
                 this.bronzeTreatCount -= 1;
             }
