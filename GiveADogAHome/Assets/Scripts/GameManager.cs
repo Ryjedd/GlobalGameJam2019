@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public float timeLeft = 120.0f;
     public bool isGameOver = false;
     public Image gameOverScreen;
+	public Image playAgain;
 	public int min = 0;
 	public int sec = 0;
     List<GameObject> dogList = new List<GameObject>();
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     public Text player2_silverScore;
     public Text player2_bronzeScore;
     public Text player2_dogScore;
+	public Text WinText;
     public Text Timer;
 
     // Start is called before the first frame update
@@ -277,6 +279,8 @@ public class GameManager : MonoBehaviour
         if (!isGameOver)
         {
             gameOverScreen.enabled = false;
+			WinText.enabled = false;
+			playAgain.enabled = false;
             timeLeft -= Time.deltaTime;
 			min = Mathf.FloorToInt(timeLeft / 60);
 			sec = Mathf.FloorToInt(timeLeft % 60);
@@ -324,13 +328,28 @@ public class GameManager : MonoBehaviour
             int player2Score = player2.GetComponent<Player>().getDogCount();
 
             gameOverScreen.enabled = true;
+			WinText.enabled = true;
+			playAgain.enabled = true;
+
+			player1_goldScore.enabled = false;
+			player1_silverScore.enabled = false;
+			player1_bronzeScore.enabled = false;
+			player1_dogScore.enabled = false;
+			player2_goldScore.enabled = false;
+			player2_silverScore.enabled = false;
+			player2_bronzeScore.enabled = false;
+			player2_dogScore.enabled = false;
+			Timer.enabled = false;
+
             if (player1Score > player2Score)
             {
                 Debug.Log("Player 1 wins!!");
+				WinText.text = "player 1 Wins\n" + "Score: " + player1Score;
             }
             else
             {
                 Debug.Log("Player 2 wins!!");
+				WinText.text = "player 2 Wins\n" + "Score: " + player2Score;
             }
         }
 
