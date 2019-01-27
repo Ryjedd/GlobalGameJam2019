@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         player2.GetComponent<Player>().setCharacter(player2);
         player2.transform.localScale = Vector3.one;
 
-        InvokeRepeating("InstantiateDogs", 0.0f, 10.0f);
+        InvokeRepeating("InstantiateDogs", 5.0f, 10.0f);
         InvokeRepeating("InstantiateTreats", 0.0f, 5.0f);
     }
 
