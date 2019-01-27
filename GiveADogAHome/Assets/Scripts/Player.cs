@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        Debug.Log("COLLISION");
+        //Debug.Log("COLLISION");
         if (col.gameObject.tag == "Door")
         {
             Physics.IgnoreCollision(col.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
             this.bronzeTreatCount += 1;
         }
 
-        Debug.Log("TAG: " + col.gameObject.tag);
+        //Debug.Log("TAG: " + col.gameObject.tag);
         if (col.gameObject.tag == "dog1"){
             if(this.goldTreatCount > 0)
             {

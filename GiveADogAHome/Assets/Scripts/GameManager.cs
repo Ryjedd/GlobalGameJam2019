@@ -196,7 +196,7 @@ public class GameManager : MonoBehaviour
         int newTreatNum = Random.Range(1, 4);
         if (newTreatNum + treatNum <= MAX_TREATS)
         {
-            for (int i = 0; i < treatNum; i++)
+            for (int i = 0; i < newTreatNum; i++)
             {
                 int treatType = Random.Range(1, 4);
                 Debug.Log(treatType);
@@ -218,13 +218,14 @@ public class GameManager : MonoBehaviour
                 go.transform.localScale = Vector3.one;
                 go.GetComponent<Treat>().setType(treatType);
                 treatList.Add(go);
+                treatNum += 1;
+                Debug.Log("ADD 1");
             }
-            treatNum += newTreatNum;
         }
         else
         {
             newTreatNum = MAX_TREATS - treatNum;
-            for (int i = 0; i < treatNum; i++)
+            for (int i = 0; i < newTreatNum; i++)
             {
                 int treatType = Random.Range(1, 4);
                 Debug.Log(treatType);
@@ -246,9 +247,11 @@ public class GameManager : MonoBehaviour
                 go.transform.localScale = Vector3.one;
                 go.GetComponent<Treat>().setType(treatType);
                 treatList.Add(go);
+                Debug.Log("ADD 2");
+                treatNum += 1;
             }
-            treatNum = MAX_TREATS;
         }
+        print("TREAT NUM: " + treatNum);
     }
 
     void displayPlayer1Text()

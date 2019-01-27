@@ -156,7 +156,7 @@ MonoBehaviour:
   timeLeft: 120
   isGameOver: 0
   gameOverScreen: {fileID: 1242819848}
-  dogNum: 10
+  dogNum: 0
   smallDog1: {fileID: 2503591670406912415, guid: 976e04bf473f0854cb822df98a05e98a,
     type: 3}
   smallDog2: {fileID: 2199029034966606239, guid: f826da28bac419249bf4d9a55dcce79f,
@@ -172,7 +172,7 @@ MonoBehaviour:
     type: 3}
   largeDog3: {fileID: 4116855649871405177, guid: 5667a2b965505c241826a7bea79bdbd8,
     type: 3}
-  treatNum: 5
+  treatNum: 0
   treat1: {fileID: 1884632447100716280, guid: 769f5ad7c2e30c643a592dc55e257881, type: 3}
   treat2: {fileID: 3691286268720082103, guid: 9c6f5f85db6829846ba91509180a09e6, type: 3}
   treat3: {fileID: 8157939255460992230, guid: b7ba52576682e434fa68c9b2d2975fa3, type: 3}
