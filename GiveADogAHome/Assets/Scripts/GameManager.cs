@@ -282,6 +282,9 @@ public class GameManager : MonoBehaviour
             //getting player1 movement
             float mH1 = Input.GetAxis("Horizontal");
             float mV1 = Input.GetAxis("Vertical");
+            Vector3 move1 = new Vector3(mH1,0, mV1);
+            if (move1 != Vector3.zero)
+                player1.transform.forward = move1;
 
             //Debug.Log(player1.GetComponent<Rigidbody>().velocity);
             player1.GetComponent<Rigidbody>().velocity = new Vector3(mH1 * speed, player1.GetComponent<Rigidbody>().velocity.y, mV1 * speed);
@@ -291,7 +294,11 @@ public class GameManager : MonoBehaviour
             //getting player2 movement
             float mH2 = Input.GetAxis("Horizontal_P2");
             float mV2 = Input.GetAxis("Vertical_P2");
+            Vector3 move2 = new Vector3(mH2, 0, mV2);
+            if (move2 != Vector3.zero)
+                player2.transform.forward = move2;
             player2.GetComponent<Rigidbody>().velocity = new Vector3(mH2 * speed, player2.GetComponent<Rigidbody>().velocity.y, mV2 * speed);
+            player2.GetComponent<Player>().updateWalk(player2.GetComponent<Rigidbody>().velocity.magnitude);
 
             displayPlayer1Text();
             displayPlayer2Text();
