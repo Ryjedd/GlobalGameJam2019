@@ -12,9 +12,15 @@ public class GameManager : MonoBehaviour
     List<GameObject> dogList = new List<GameObject>();
     public int dogNum = 10;
     private const int MAX_DOGS = 50;
-    public GameObject dog1; //selected in the editor
-    public GameObject dog2; //selected in the editor
-    public GameObject dog3; //selected in the editor
+    public GameObject smallDog1; //selected in the editor
+    public GameObject smallDog2; //selected in the editor
+    public GameObject smallDog3; //selected in the editor
+    public GameObject medDog1; //selected in the editor
+    public GameObject medDog2; //selected in the editor
+    public GameObject medDog3; //selected in the editor
+    public GameObject largeDog1; //selected in the editor
+    public GameObject largeDog2; //selected in the editor
+    public GameObject largeDog3; //selected in the editor
 
     List<GameObject> treatList = new List<GameObject>();
     public int treatNum = 5;
@@ -58,7 +64,7 @@ public class GameManager : MonoBehaviour
     void InstantiateDogs()
     {
         //instantiate dogs
-        int newDogNum = Random.Range(1, 15);
+        int newDogNum = Random.Range(1, 5);
         if (newDogNum + dogNum <= MAX_DOGS)
         {
             for (int i = 0; i < newDogNum; i++)
@@ -66,15 +72,50 @@ public class GameManager : MonoBehaviour
                 int dogType = Random.Range(1, 4);
                 Debug.Log(dogType);
                 GameObject dog;
+                int dogModelNum = Random.Range(1, 4);
                 if (dogType == 1)
                 {
-                    dog = dog1;
+                    if (dogModelNum == 1)
+                    {
+                        dog = smallDog1;
+                    }
+                    else if (dogModelNum == 2)
+                    {
+                        dog = smallDog2;
+                    }
+                    else
+                    {
+                        dog = smallDog3;
+                    }
                 }else if(dogType == 2)
                 {
-                    dog = dog2;
-                }else
+                    if (dogModelNum == 1)
+                    {
+                        dog = medDog1;
+                    }
+                    else if (dogModelNum == 2)
+                    {
+                        dog = medDog2;
+                    }
+                    else
+                    {
+                        dog = medDog3;
+                    }
+                }
+                else
                 {
-                    dog = dog3;
+                    if (dogModelNum == 1)
+                    {
+                        dog = largeDog1;
+                    }
+                    else if (dogModelNum == 2)
+                    {
+                        dog = largeDog2;
+                    }
+                    else
+                    {
+                        dog = largeDog3;
+                    }
                 }
                 GameObject go = Instantiate(dog, new Vector3((float)i - 5.0F, 1, 30), Quaternion.identity) as GameObject;
                 go.transform.localScale = Vector3.one;
@@ -92,17 +133,51 @@ public class GameManager : MonoBehaviour
                 int dogType = Random.Range(1, 4);
                 Debug.Log(dogType);
                 GameObject dog;
+                int dogModelNum = Random.Range(1, 4);
                 if (dogType == 1)
                 {
-                    dog = dog1;
+                    if (dogModelNum == 1)
+                    {
+                        dog = smallDog1;
+                    }
+                    else if (dogModelNum == 2)
+                    {
+                        dog = smallDog2;
+                    }
+                    else
+                    {
+                        dog = smallDog3;
+                    }
                 }
                 else if (dogType == 2)
                 {
-                    dog = dog2;
+                    if (dogModelNum == 1)
+                    {
+                        dog = medDog1;
+                    }
+                    else if (dogModelNum == 2)
+                    {
+                        dog = medDog2;
+                    }
+                    else
+                    {
+                        dog = medDog3;
+                    }
                 }
                 else
                 {
-                    dog = dog3;
+                    if (dogModelNum == 1)
+                    {
+                        dog = largeDog1;
+                    }
+                    else if (dogModelNum == 2)
+                    {
+                        dog = largeDog2;
+                    }
+                    else
+                    {
+                        dog = largeDog3;
+                    }
                 }
 
                 GameObject go = Instantiate(dog, new Vector3((float)i - 30.0F, 1, 25), Quaternion.identity) as GameObject;

@@ -157,13 +157,25 @@ MonoBehaviour:
   isGameOver: 0
   gameOverScreen: {fileID: 1242819848}
   dogNum: 10
-  dog1: {fileID: 2503591670406912415, guid: 976e04bf473f0854cb822df98a05e98a, type: 3}
-  dog2: {fileID: 4143362225955178236, guid: ce4220ef6688e1f4b85f8cd48793e560, type: 3}
-  dog3: {fileID: 4116855649871405177, guid: 5667a2b965505c241826a7bea79bdbd8, type: 3}
+  smallDog1: {fileID: 2503591670406912415, guid: 976e04bf473f0854cb822df98a05e98a,
+    type: 3}
+  smallDog2: {fileID: 2503591670406912415, guid: 976e04bf473f0854cb822df98a05e98a,
+    type: 3}
+  smallDog3: {fileID: 2503591670406912415, guid: 976e04bf473f0854cb822df98a05e98a,
+    type: 3}
+  medDog1: {fileID: 4143362225955178236, guid: ce4220ef6688e1f4b85f8cd48793e560, type: 3}
+  medDog2: {fileID: 4143362225955178236, guid: ce4220ef6688e1f4b85f8cd48793e560, type: 3}
+  medDog3: {fileID: 4143362225955178236, guid: ce4220ef6688e1f4b85f8cd48793e560, type: 3}
+  largeDog1: {fileID: 4116855649871405177, guid: 5667a2b965505c241826a7bea79bdbd8,
+    type: 3}
+  largeDog2: {fileID: 4116855649871405177, guid: 5667a2b965505c241826a7bea79bdbd8,
+    type: 3}
+  largeDog3: {fileID: 4116855649871405177, guid: 5667a2b965505c241826a7bea79bdbd8,
+    type: 3}
   treatNum: 5
-  treat1: {fileID: 7796641854197518435, guid: 769f5ad7c2e30c643a592dc55e257881, type: 3}
-  treat2: {fileID: 284011246006716295, guid: 9c6f5f85db6829846ba91509180a09e6, type: 3}
-  treat3: {fileID: 9011431347856051040, guid: b7ba52576682e434fa68c9b2d2975fa3, type: 3}
+  treat1: {fileID: 6696657917179430946, guid: 769f5ad7c2e30c643a592dc55e257881, type: 3}
+  treat2: {fileID: 7983800108281945617, guid: 9c6f5f85db6829846ba91509180a09e6, type: 3}
+  treat3: {fileID: 6954405633838262678, guid: b7ba52576682e434fa68c9b2d2975fa3, type: 3}
   player1_goldScore: {fileID: 1972633610}
   player1_silverScore: {fileID: 1314182009}
   player1_bronzeScore: {fileID: 754213373}
@@ -1058,14 +1070,6 @@ MonoBehaviour:
   m_ScreenEdgeBuffer: 4
   m_MinSize: 6.5
   m_Targets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &966412823 stripped
