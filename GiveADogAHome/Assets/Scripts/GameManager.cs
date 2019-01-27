@@ -306,8 +306,8 @@ public class GameManager : MonoBehaviour
 			if(!(player2.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.LeftShift) && (player2.GetComponent<Player>().getPlayerCollision())){
 				Punch(5.0f, player1.transform.forward, player2);
 			}
-			if(!(player1.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.RightShift) && (player2.GetComponent<Player>().getPlayerCollision())){
-				Punch(5.0f, player2.transform.forward, player2);
+			if(!(player1.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.RightShift) && (player1.GetComponent<Player>().getPlayerCollision())){
+				Punch(5.0f, player2.transform.forward, player1);
 			}
 			displayPlayer1Text();
             displayPlayer2Text();
