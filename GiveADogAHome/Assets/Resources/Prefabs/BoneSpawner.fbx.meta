@@ -1,0 +1,447 @@
+fileFormatVersion: 2
+guid: 52197f6563eb5944892476894a3cb5fe
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: boneEnd_1_geo
+    100002: boneEnd_1_geo 1
+    100004: boneEnd_1_geo 10
+    100006: boneEnd_1_geo 11
+    100008: boneEnd_1_geo 12
+    100010: boneEnd_1_geo 13
+    100012: boneEnd_1_geo 14
+    100014: boneEnd_1_geo 15
+    100016: boneEnd_1_geo 16
+    100018: boneEnd_1_geo 17
+    100020: boneEnd_1_geo 18
+    100022: boneEnd_1_geo 2
+    100024: boneEnd_1_geo 3
+    100026: boneEnd_1_geo 4
+    100028: boneEnd_1_geo 5
+    100030: boneEnd_1_geo 6
+    100032: boneEnd_1_geo 7
+    100034: boneEnd_1_geo 8
+    100036: boneEnd_1_geo 9
+    100038: boneEnd_2_geo
+    100040: boneEnd_2_geo 1
+    100042: boneEnd_2_geo 10
+    100044: boneEnd_2_geo 11
+    100046: boneEnd_2_geo 12
+    100048: boneEnd_2_geo 13
+    100050: boneEnd_2_geo 14
+    100052: boneEnd_2_geo 15
+    100054: boneEnd_2_geo 16
+    100056: boneEnd_2_geo 17
+    100058: boneEnd_2_geo 18
+    100060: boneEnd_2_geo 2
+    100062: boneEnd_2_geo 3
+    100064: boneEnd_2_geo 4
+    100066: boneEnd_2_geo 5
+    100068: boneEnd_2_geo 6
+    100070: boneEnd_2_geo 7
+    100072: boneEnd_2_geo 8
+    100074: boneEnd_2_geo 9
+    100076: boneMiddle_geo
+    100078: boneMiddle_geo 1
+    100080: boneMiddle_geo 10
+    100082: boneMiddle_geo 11
+    100084: boneMiddle_geo 12
+    100086: boneMiddle_geo 13
+    100088: boneMiddle_geo 14
+    100090: boneMiddle_geo 15
+    100092: boneMiddle_geo 16
+    100094: boneMiddle_geo 17
+    100096: boneMiddle_geo 18
+    100098: boneMiddle_geo 2
+    100100: boneMiddle_geo 3
+    100102: boneMiddle_geo 4
+    100104: boneMiddle_geo 5
+    100106: boneMiddle_geo 6
+    100108: boneMiddle_geo 7
+    100110: boneMiddle_geo 8
+    100112: boneMiddle_geo 9
+    100114: bones
+    100116: //RootNode
+    100118: boneTreat
+    100120: boneTreat 1
+    100122: boneTreat1
+    100124: boneTreat10
+    100126: boneTreat11
+    100128: boneTreat12
+    100130: boneTreat13
+    100132: boneTreat14
+    100134: boneTreat15
+    100136: boneTreat16
+    100138: boneTreat17
+    100140: boneTreat18
+    100142: boneTreat2
+    100144: boneTreat3
+    100146: boneTreat4
+    100148: boneTreat5
+    100150: boneTreat6
+    100152: boneTreat7
+    100154: boneTreat8
+    100156: boneTreat9
+    100158: shelf_geo
+    100160: support_geo
+    100162: treats_ver005:boneEnd_1_geo
+    100164: treats_ver005:boneEnd_2_geo
+    100166: treats_ver005:boneMiddle_geo
+    400000: boneEnd_1_geo
+    400002: boneEnd_1_geo 1
+    400004: boneEnd_1_geo 10
+    400006: boneEnd_1_geo 11
+    400008: boneEnd_1_geo 12
+    400010: boneEnd_1_geo 13
+    400012: boneEnd_1_geo 14
+    400014: boneEnd_1_geo 15
+    400016: boneEnd_1_geo 16
+    400018: boneEnd_1_geo 17
+    400020: boneEnd_1_geo 18
+    400022: boneEnd_1_geo 2
+    400024: boneEnd_1_geo 3
+    400026: boneEnd_1_geo 4
+    400028: boneEnd_1_geo 5
+    400030: boneEnd_1_geo 6
+    400032: boneEnd_1_geo 7
+    400034: boneEnd_1_geo 8
+    400036: boneEnd_1_geo 9
+    400038: boneEnd_2_geo
+    400040: boneEnd_2_geo 1
+    400042: boneEnd_2_geo 10
+    400044: boneEnd_2_geo 11
+    400046: boneEnd_2_geo 12
+    400048: boneEnd_2_geo 13
+    400050: boneEnd_2_geo 14
+    400052: boneEnd_2_geo 15
+    400054: boneEnd_2_geo 16
+    400056: boneEnd_2_geo 17
+    400058: boneEnd_2_geo 18
+    400060: boneEnd_2_geo 2
+    400062: boneEnd_2_geo 3
+    400064: boneEnd_2_geo 4
+    400066: boneEnd_2_geo 5
+    400068: boneEnd_2_geo 6
+    400070: boneEnd_2_geo 7
+    400072: boneEnd_2_geo 8
+    400074: boneEnd_2_geo 9
+    400076: boneMiddle_geo
+    400078: boneMiddle_geo 1
+    400080: boneMiddle_geo 10
+    400082: boneMiddle_geo 11
+    400084: boneMiddle_geo 12
+    400086: boneMiddle_geo 13
+    400088: boneMiddle_geo 14
+    400090: boneMiddle_geo 15
+    400092: boneMiddle_geo 16
+    400094: boneMiddle_geo 17
+    400096: boneMiddle_geo 18
+    400098: boneMiddle_geo 2
+    400100: boneMiddle_geo 3
+    400102: boneMiddle_geo 4
+    400104: boneMiddle_geo 5
+    400106: boneMiddle_geo 6
+    400108: boneMiddle_geo 7
+    400110: boneMiddle_geo 8
+    400112: boneMiddle_geo 9
+    400114: bones
+    400116: //RootNode
+    400118: boneTreat
+    400120: boneTreat 1
+    400122: boneTreat1
+    400124: boneTreat10
+    400126: boneTreat11
+    400128: boneTreat12
+    400130: boneTreat13
+    400132: boneTreat14
+    400134: boneTreat15
+    400136: boneTreat16
+    400138: boneTreat17
+    400140: boneTreat18
+    400142: boneTreat2
+    400144: boneTreat3
+    400146: boneTreat4
+    400148: boneTreat5
+    400150: boneTreat6
+    400152: boneTreat7
+    400154: boneTreat8
+    400156: boneTreat9
+    400158: shelf_geo
+    400160: support_geo
+    400162: treats_ver005:boneEnd_1_geo
+    400164: treats_ver005:boneEnd_2_geo
+    400166: treats_ver005:boneMiddle_geo
+    2100000: blueMetal
+    2100002: treats_ver005_bone_mat
+    2300000: boneEnd_1_geo
+    2300002: boneEnd_1_geo 1
+    2300004: boneEnd_1_geo 10
+    2300006: boneEnd_1_geo 11
+    2300008: boneEnd_1_geo 12
+    2300010: boneEnd_1_geo 13
+    2300012: boneEnd_1_geo 14
+    2300014: boneEnd_1_geo 15
+    2300016: boneEnd_1_geo 16
+    2300018: boneEnd_1_geo 17
+    2300020: boneEnd_1_geo 18
+    2300022: boneEnd_1_geo 2
+    2300024: boneEnd_1_geo 3
+    2300026: boneEnd_1_geo 4
+    2300028: boneEnd_1_geo 5
+    2300030: boneEnd_1_geo 6
+    2300032: boneEnd_1_geo 7
+    2300034: boneEnd_1_geo 8
+    2300036: boneEnd_1_geo 9
+    2300038: boneEnd_2_geo
+    2300040: boneEnd_2_geo 1
+    2300042: boneEnd_2_geo 10
+    2300044: boneEnd_2_geo 11
+    2300046: boneEnd_2_geo 12
+    2300048: boneEnd_2_geo 13
+    2300050: boneEnd_2_geo 14
+    2300052: boneEnd_2_geo 15
+    2300054: boneEnd_2_geo 16
+    2300056: boneEnd_2_geo 17
+    2300058: boneEnd_2_geo 18
+    2300060: boneEnd_2_geo 2
+    2300062: boneEnd_2_geo 3
+    2300064: boneEnd_2_geo 4
+    2300066: boneEnd_2_geo 5
+    2300068: boneEnd_2_geo 6
+    2300070: boneEnd_2_geo 7
+    2300072: boneEnd_2_geo 8
+    2300074: boneEnd_2_geo 9
+    2300076: boneMiddle_geo
+    2300078: boneMiddle_geo 1
+    2300080: boneMiddle_geo 10
+    2300082: boneMiddle_geo 11
+    2300084: boneMiddle_geo 12
+    2300086: boneMiddle_geo 13
+    2300088: boneMiddle_geo 14
+    2300090: boneMiddle_geo 15
+    2300092: boneMiddle_geo 16
+    2300094: boneMiddle_geo 17
+    2300096: boneMiddle_geo 18
+    2300098: boneMiddle_geo 2
+    2300100: boneMiddle_geo 3
+    2300102: boneMiddle_geo 4
+    2300104: boneMiddle_geo 5
+    2300106: boneMiddle_geo 6
+    2300108: boneMiddle_geo 7
+    2300110: boneMiddle_geo 8
+    2300112: boneMiddle_geo 9
+    2300114: shelf_geo
+    2300116: support_geo
+    2300118: treats_ver005:boneEnd_1_geo
+    2300120: treats_ver005:boneEnd_2_geo
+    2300122: treats_ver005:boneMiddle_geo
+    3300000: boneEnd_1_geo
+    3300002: boneEnd_1_geo 1
+    3300004: boneEnd_1_geo 10
+    3300006: boneEnd_1_geo 11
+    3300008: boneEnd_1_geo 12
+    3300010: boneEnd_1_geo 13
+    3300012: boneEnd_1_geo 14
+    3300014: boneEnd_1_geo 15
+    3300016: boneEnd_1_geo 16
+    3300018: boneEnd_1_geo 17
+    3300020: boneEnd_1_geo 18
+    3300022: boneEnd_1_geo 2
+    3300024: boneEnd_1_geo 3
+    3300026: boneEnd_1_geo 4
+    3300028: boneEnd_1_geo 5
+    3300030: boneEnd_1_geo 6
+    3300032: boneEnd_1_geo 7
+    3300034: boneEnd_1_geo 8
+    3300036: boneEnd_1_geo 9
+    3300038: boneEnd_2_geo
+    3300040: boneEnd_2_geo 1
+    3300042: boneEnd_2_geo 10
+    3300044: boneEnd_2_geo 11
+    3300046: boneEnd_2_geo 12
+    3300048: boneEnd_2_geo 13
+    3300050: boneEnd_2_geo 14
+    3300052: boneEnd_2_geo 15
+    3300054: boneEnd_2_geo 16
+    3300056: boneEnd_2_geo 17
+    3300058: boneEnd_2_geo 18
+    3300060: boneEnd_2_geo 2
+    3300062: boneEnd_2_geo 3
+    3300064: boneEnd_2_geo 4
+    3300066: boneEnd_2_geo 5
+    3300068: boneEnd_2_geo 6
+    3300070: boneEnd_2_geo 7
+    3300072: boneEnd_2_geo 8
+    3300074: boneEnd_2_geo 9
+    3300076: boneMiddle_geo
+    3300078: boneMiddle_geo 1
+    3300080: boneMiddle_geo 10
+    3300082: boneMiddle_geo 11
+    3300084: boneMiddle_geo 12
+    3300086: boneMiddle_geo 13
+    3300088: boneMiddle_geo 14
+    3300090: boneMiddle_geo 15
+    3300092: boneMiddle_geo 16
+    3300094: boneMiddle_geo 17
+    3300096: boneMiddle_geo 18
+    3300098: boneMiddle_geo 2
+    3300100: boneMiddle_geo 3
+    3300102: boneMiddle_geo 4
+    3300104: boneMiddle_geo 5
+    3300106: boneMiddle_geo 6
+    3300108: boneMiddle_geo 7
+    3300110: boneMiddle_geo 8
+    3300112: boneMiddle_geo 9
+    3300114: shelf_geo
+    3300116: support_geo
+    3300118: treats_ver005:boneEnd_1_geo
+    3300120: treats_ver005:boneEnd_2_geo
+    3300122: treats_ver005:boneMiddle_geo
+    4300000: shelf_geo
+    4300002: support_geo
+    4300004: treats_ver005:boneEnd_1_geo
+    4300006: treats_ver005:boneMiddle_geo
+    4300008: treats_ver005:boneEnd_2_geo
+    4300010: boneEnd_1_geo
+    4300012: boneMiddle_geo
+    4300014: boneEnd_2_geo
+    4300016: boneEnd_1_geo
+    4300018: boneMiddle_geo
+    4300020: boneEnd_2_geo
+    4300022: boneEnd_1_geo
+    4300024: boneMiddle_geo
+    4300026: boneEnd_2_geo
+    4300028: boneEnd_1_geo
+    4300030: boneMiddle_geo
+    4300032: boneEnd_2_geo
+    4300034: boneEnd_1_geo
+    4300036: boneMiddle_geo
+    4300038: boneEnd_2_geo
+    4300040: boneEnd_1_geo
+    4300042: boneMiddle_geo
+    4300044: boneEnd_2_geo
+    4300046: boneEnd_1_geo
+    4300048: boneMiddle_geo
+    4300050: boneEnd_2_geo
+    4300052: boneEnd_1_geo
+    4300054: boneMiddle_geo
+    4300056: boneEnd_2_geo
+    4300058: boneEnd_1_geo
+    4300060: boneMiddle_geo
+    4300062: boneEnd_2_geo
+    4300064: boneEnd_1_geo
+    4300066: boneMiddle_geo
+    4300068: boneEnd_2_geo
+    4300070: boneEnd_1_geo
+    4300072: boneMiddle_geo
+    4300074: boneEnd_2_geo
+    4300076: boneEnd_1_geo
+    4300078: boneMiddle_geo
+    4300080: boneEnd_2_geo
+    4300082: boneEnd_1_geo
+    4300084: boneMiddle_geo
+    4300086: boneEnd_2_geo
+    4300088: boneEnd_1_geo
+    4300090: boneMiddle_geo
+    4300092: boneEnd_2_geo
+    4300094: boneEnd_1_geo
+    4300096: boneMiddle_geo
+    4300098: boneEnd_2_geo
+    4300100: boneEnd_1_geo
+    4300102: boneMiddle_geo
+    4300104: boneEnd_2_geo
+    4300106: boneEnd_1_geo
+    4300108: boneMiddle_geo
+    4300110: boneEnd_2_geo
+    4300112: boneEnd_1_geo
+    4300114: boneMiddle_geo
+    4300116: boneEnd_2_geo
+    4300118: boneEnd_1_geo
+    4300120: boneMiddle_geo
+    4300122: boneEnd_2_geo
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

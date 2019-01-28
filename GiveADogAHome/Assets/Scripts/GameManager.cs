@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
     public float timeLeft = 120.0f;
     public bool isGameOver = false;
     public Image gameOverScreen;
-	public Image playAgain;
-	public int min = 0;
-	public int sec = 0;
+    public Image playAgain;
+    public int min = 0;
+    public int sec = 0;
+    public Color fullOpacity = new Color(1, 1, 1, 1);
+    public Color halfOpacity = new Color(1, 1, 1, 0.5f);
     List<GameObject> dogList = new List<GameObject>();
     public int dogNum = 0;
     private const int MAX_DOGS = 20;
@@ -35,16 +37,17 @@ public class GameManager : MonoBehaviour
     private GameObject player2;
     public float speed = 20.0f;
 
-    public Text player1_goldScore;
-    public Text player1_silverScore;
-    public Text player1_bronzeScore;
     public Text player1_dogScore;
-    public Text player2_goldScore;
-    public Text player2_silverScore;
-    public Text player2_bronzeScore;
     public Text player2_dogScore;
-	public Text WinText;
+    public Text WinText;
     public Text Timer;
+
+    public Image P1_HotDog;
+    public Image P1_DogTreat;
+    public Image P1_Ham;
+    public Image P2_HotDog;
+    public Image P2_DogTreat;
+    public Image P2_Ham;
 
     // Start is called before the first frame update
     void Start()
@@ -90,7 +93,8 @@ public class GameManager : MonoBehaviour
                     {
                         dog = smallDog3;
                     }
-                }else if(dogType == 2)
+                }
+                else if (dogType == 2)
                 {
                     if (dogModelNum == 1)
                     {
@@ -122,13 +126,14 @@ public class GameManager : MonoBehaviour
                 }
                 GameObject go = Instantiate(dog, new Vector3((float)i - 5.0F, 1, 30), Quaternion.identity) as GameObject;
                 go.transform.localScale = Vector3.one;
-                
+
                 go.GetComponent<Wander>().setup(dogType);
                 go.GetComponent<Dog>().setup(dogType);
                 dogList.Add(go);
             }
             dogNum += newDogNum;
-        } else
+        }
+        else
         {
             newDogNum = MAX_DOGS - dogNum;
             for (int i = 0; i < newDogNum; i++)
@@ -250,27 +255,75 @@ public class GameManager : MonoBehaviour
                 go.transform.localScale = Vector3.one;
                 go.GetComponent<Treat>().setType(treatType);
                 treatList.Add(go);
-               // Debug.Log("ADD 2");
+                // Debug.Log("ADD 2");
                 treatNum += 1;
             }
         }
-       // print("TREAT NUM: " + treatNum);
+        // print("TREAT NUM: " + treatNum);
     }
 
     void displayPlayer1Text()
     {
-        player1_goldScore.text = "Bone Treat: " + player1.GetComponent<Player>().getGoldTreatCount().ToString();
-        player1_silverScore.text = "Hotdog Treat: " + player1.GetComponent<Player>().getSilverTreatCount().ToString();
-        player1_bronzeScore.text = "Ham Treat: " + player1.GetComponent<Player>().getBronzeTreatCount().ToString();
         player1_dogScore.text = "Dog Score: " + player1.GetComponent<Player>().getDogCount().ToString();
+        if (player1.GetComponent<Player>().getGoldTreatCount() > 0)
+        {
+            P1_DogTreat.color = fullOpacity;
+            Debug.Log("dog treat 1");
+        }
+        else if (player1.GetComponent<Player>().getGoldTreatCount() <= 0)
+        {
+            P1_DogTreat.color = halfOpacity;
+        }
+
+        if (player1.GetComponent<Player>().getSilverTreatCount() > 0)
+        {
+            P1_HotDog.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            P1_HotDog.color = new Color(1, 1, 1, 0.5f);
+        }
+
+        if (player1.GetComponent<Player>().getBronzeTreatCount() > 0)
+        {
+            P1_Ham.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            P1_Ham.color = new Color(1, 1, 1, 0.5f);
+        }
+
     }
 
     void displayPlayer2Text()
     {
-        player2_goldScore.text = "Bone Treat: " + player2.GetComponent<Player>().getGoldTreatCount().ToString();
-        player2_silverScore.text = "Hotdog Treat: " + player2.GetComponent<Player>().getSilverTreatCount().ToString();
-        player2_bronzeScore.text = "Ham Treat: " + player2.GetComponent<Player>().getBronzeTreatCount().ToString();
         player2_dogScore.text = "Dog Score: " + player2.GetComponent<Player>().getDogCount().ToString();
+        if (player2.GetComponent<Player>().getGoldTreatCount() > 0)
+        {
+            P2_DogTreat.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            P2_DogTreat.color = new Color(1, 1, 1, 0.5f);
+        }
+
+        if (player2.GetComponent<Player>().getSilverTreatCount() > 0)
+        {
+            P2_HotDog.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            P2_HotDog.color = new Color(1, 1, 1, 0.5f);
+        }
+
+        if (player2.GetComponent<Player>().getBronzeTreatCount() > 0)
+        {
+            P2_Ham.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            P2_Ham.color = new Color(1, 1, 1, 0.5f);
+        }
     }
 
     // Update is called once per frame
@@ -279,17 +332,17 @@ public class GameManager : MonoBehaviour
         if (!isGameOver)
         {
             gameOverScreen.enabled = false;
-			WinText.enabled = false;
-			playAgain.enabled = false;
+            WinText.enabled = false;
+            playAgain.enabled = false;
             timeLeft -= Time.deltaTime;
-			min = Mathf.FloorToInt(timeLeft / 60);
-			sec = Mathf.FloorToInt(timeLeft % 60);
-			Timer.text = min.ToString("00") + ":" + sec.ToString("00");
-			//Timer.text = "Time Remaining: " + Mathf.Round(timeLeft);
+            min = Mathf.FloorToInt(timeLeft / 60);
+            sec = Mathf.FloorToInt(timeLeft % 60);
+            Timer.text = min.ToString("00") + ":" + sec.ToString("00");
+            //Timer.text = "Time Remaining: " + Mathf.Round(timeLeft);
             //getting player1 movement
             float mH1 = Input.GetAxis("Horizontal");
             float mV1 = Input.GetAxis("Vertical");
-            Vector3 move1 = new Vector3(mH1,0, mV1);
+            Vector3 move1 = new Vector3(mH1, 0, mV1);
             if (move1 != Vector3.zero)
                 player1.transform.forward = move1;
 
@@ -314,16 +367,18 @@ public class GameManager : MonoBehaviour
                 player2.GetComponent<Player>().updateWalk(player2.GetComponent<Rigidbody>().velocity.magnitude);
             }
 
-			if(!(player2.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.Alpha1) && (player2.GetComponent<Player>().getPlayerCollision())){
-				Punch(5.0f, player1.transform.forward, player2);
+            if (!(player2.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.Alpha1) && (player2.GetComponent<Player>().getPlayerCollision()))
+            {
+                Punch(5.0f, player1.transform.forward, player2);
                 player1.GetComponent<Player>().animatePunch();
             }
-			if(!(player1.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.Keypad2) && (player1.GetComponent<Player>().getPlayerCollision())){
-				Punch(5.0f, player2.transform.forward, player1);
+            if (!(player1.GetComponent<Player>().getPunch()) && Input.GetKeyDown(KeyCode.Keypad2) && (player1.GetComponent<Player>().getPlayerCollision()))
+            {
+                Punch(5.0f, player2.transform.forward, player1);
                 player2.GetComponent<Player>().animatePunch();
 
             }
-			displayPlayer1Text();
+            displayPlayer1Text();
             displayPlayer2Text();
             if (timeLeft < 0)
             {
@@ -338,40 +393,45 @@ public class GameManager : MonoBehaviour
             int player2Score = player2.GetComponent<Player>().getDogCount();
 
             gameOverScreen.enabled = true;
-			WinText.enabled = true;
-			playAgain.enabled = true;
+            WinText.enabled = true;
+            playAgain.enabled = true;
 
-			player1_goldScore.enabled = false;
-			player1_silverScore.enabled = false;
-			player1_bronzeScore.enabled = false;
-			player1_dogScore.enabled = false;
-			player2_goldScore.enabled = false;
-			player2_silverScore.enabled = false;
-			player2_bronzeScore.enabled = false;
-			player2_dogScore.enabled = false;
-			Timer.enabled = false;
+            P1_DogTreat.enabled = false;
+            P1_HotDog.enabled = false;
+            P1_Ham.enabled = false;
+            player1_dogScore.enabled = false;
+            P2_DogTreat.enabled = false;
+            P2_HotDog.enabled = false;
+            P2_Ham.enabled = false;
+            player2_dogScore.enabled = false;
+            Timer.enabled = false;
 
             if (player1Score > player2Score)
             {
-                Debug.Log("Player 1 wins!!");
-				WinText.text = "player 1 Wins\n" + "Score: " + player1Score;
+                //Debug.Log("Player 1 wins!!");
+                WinText.text = "player 1 Wins!\n" + "Score: " + player1Score;
+            }
+            else if(player2Score > player1Score)
+            {
+                //Debug.Log("Player 2 wins!!");
+                WinText.text = "player 2 Wins!\n" + "Score: " + player2Score;
             }
             else
             {
-                Debug.Log("Player 2 wins!!");
-				WinText.text = "player 2 Wins\n" + "Score: " + player2Score;
+                WinText.text = "It's a tie!\n" + "Score: " + player2Score;
             }
         }
 
-		void Punch(float distance, Vector3 direction, GameObject player){
-			player.GetComponent<Player>().setPunch(true);
-			float timer = 0;
-			Vector3 orgPos = player.GetComponent<Transform>().position;
-			direction.Normalize();
-			Vector3 newDistance = distance * direction;
-			player.GetComponent<Transform>().position = orgPos + newDistance;
-			player.GetComponent<Player>().setPunch(false);
-			player.GetComponent<Player>().setPlayerCollision(false);
-		}
+        void Punch(float distance, Vector3 direction, GameObject player)
+        {
+            player.GetComponent<Player>().setPunch(true);
+            float timer = 0;
+            Vector3 orgPos = player.GetComponent<Transform>().position;
+            direction.Normalize();
+            Vector3 newDistance = distance * direction;
+            player.GetComponent<Transform>().position = orgPos + newDistance;
+            player.GetComponent<Player>().setPunch(false);
+            player.GetComponent<Player>().setPlayerCollision(false);
+        }
     }
 }
